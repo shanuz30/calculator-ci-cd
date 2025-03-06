@@ -1,0 +1,64 @@
+import monitor
+
+monitor.smallFont()
+
+# Constants ->please open the Constants editor on on the right side of the tabs to 
+# change this values using a comfortable slider :-)
+
+const INTERVAL_IN_MS = 2500  # 250..5000
+
+# MQTT Broker details
+uri = "mqtts://b649124ec643459999d26166bf458a16.s1.eu.hivemq.cloud:8883"
+username = "oxomania"
+password = "BlaBla12"
+
+subscribeTopic_sensor_data = "sensor_data"
+subscribeTopic_data_nox = "data_nox"
+subscribeTopic_data_temp = "data_temp"
+publishTopic_sensor_data = "sensor_data"
+publishTopic_data_nox = "data_nox"
+publishTopic_data_temp = "data_temp"
+
+def setData():
+    co2 = getCO2()
+    nox = getNOx()
+    temp = getTemperature()
+    sensor_data = co2 + " ppm"
+    data_nox = nox + "ppb"
+    data_temp = temp + "C"
+    publishMQTT(publishTopic_sensor_data, sensor_data)
+    publishMQTT(publishTopic_data_nox, data_nox)
+    publishMQTT(publishTopic_data_temp, data_temp)
+
+# Function to handle drawing received MQTT messages
+def drawReceivedMessage():
+    monitor.push("MQTT Message")
+    topic = getMQTTTopic()
+    monitor.pushc("topic: " + topic, MONITOR_GREEN)
+    data = getMQTTData()
+    monitor.pushc("data: " + data, MONITOR_YELLOW)
+    
+# Function to setup the connection and subscriptions
+def setup():
+    monitor.push("Connecting...")
+    
+    # Connect to the MQTT broker
+    if connectMQTT(uri, username, password):
+        subscribeMQTT(subscribeTopic_sensor_data)
+        subscribeMQTT(subscribeTopic_data_nox)
+        subscribeMQTT(subscribeTopic_data_temp)
+        monitor.pushc("successful", MONITOR_GREEN)
+        delay(1000)
+    else:
+        monitor.pushc("failed!", MONITOR_RED)
+        delay(1000)
+        exit()
+
+    setInterval(INTERVAL_IN_MS)
+    
+setup()  # Initial setup including MQTT connection and subscribing to the topics
+
+def onTimer():
+    while hasMQTTMessage():
+        drawReceivedMessage()
+    setData()
