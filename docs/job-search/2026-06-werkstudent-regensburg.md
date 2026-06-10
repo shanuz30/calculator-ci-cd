@@ -84,15 +84,40 @@ Kontakt: Recruiting Gökcen Avci (+49 941 201-2415), Fachbereich Manuel Ringenbe
 
 ---
 
-## Quellen-Abdeckung (vom Nutzer angefragt)
+## 🔍 Unverifizierte Leads (Desperation-Vector-Nachlauf, 10.06.2026)
 
-| Quelle | Status |
+> Gefunden über Such-Fragment- und Nachbarquellen-Vektoren, da Direktzugriff nicht möglich war.
+> **Veröffentlichungsdatum nicht verifizierbar** → nicht als Juni-Treffer gewertet, manuell prüfen.
+
+### trinnovative GmbH — Werkstudent Softwareentwicklung (Regensburg, TechBase-Netzwerk)
+- **Quelle:** [Stellenausschreibung (PDF)](https://www.trinnovative.de/assets/docs/karriere/Stellenausschreibung_Werkstudent.pdf) · [Karriereseite](https://www.trinnovative.de/karriere/)
+- **Anforderungen (aus Suchindex):** immatrikuliert, solide Kenntnisse in Java, TypeScript, **Python** o. ä.; Framework-/Cloud-Erfahrung ein Plus; Mitarbeit im Scrum-Team
+- **CV-Einschätzung:** Python (produktiv) ✓, Java ✓, JavaScript ✓, Git/CI ✓ — voraussichtlich ≥ 60 %, aber JD-Volltext und Datum unbestätigt
+- **Bewerbung:** karriere@trinnovative.de
+- ⚠️ Datum der Ausschreibung unbekannt — vor Bewerbung prüfen, ob noch aktuell
+
+### Consolinno Energy GmbH (CV-Zielfirma, TechBase)
+- Lt. [Indeed-Firmenprofil](https://de.indeed.com/cmp/Consolinno-Energy-Gmbh) **5 offene Stellen**, Titel über die verfügbaren Kanäle nicht abrufbar; auf Indeed keine aktive Werkstudenten-Anzeige
+- Manuell prüfen: https://consolinno.de/karriere/
+
+---
+
+## Quellen-Abdeckung — ehrliche Bilanz (Desperation-Vector-Protokoll)
+
+**Root-Cause-Korrektur (10.06.2026):** Die HTTP-403-Fehler stammen überwiegend **nicht von den Webseiten**, sondern von der Netzwerk-Richtlinie der Claude-Code-Ausführungsumgebung: Selbst example.com und google.com liefern 403; curl meldet „Host not in allowlist". Direkter Web-Abruf ist in dieser Umgebung generell gesperrt. Verfügbare Kanäle: Websuche (verwaltet), Indeed-API (verwaltet), GitHub.
+
+| Vektor | Ergebnis |
 |---|---|
-| Indeed (via Job-Such-API) | ✅ vollständig durchsucht (4 Suchläufe: IoT/Energie, Software/Python, Elektrotechnik/Embedded, allgemein Werkstudent) |
-| TechBase Regensburg (techbase.de/en/service/jobs) | ⚠️ Seite blockiert automatisierten Zugriff (HTTP 403) — manuell prüfen |
-| meinestadt.de | ⚠️ Direktzugriff blockiert (HTTP 403); per Websuche: [Studentenjobs Regensburg](https://jobs.meinestadt.de/regensburg/studentenjobs) (208 Angebote), [Python-Jobs](https://jobs.meinestadt.de/regensburg/skills/48) (60 Angebote) — manuell mit Filter „Werkstudent" prüfen |
-| Mittelbayerische Zeitung Stellenbörse | ❌ mittelbayerische.de blockiert den Anthropic-Crawler vollständig — manuell prüfen: https://jobs.mittelbayerische.de |
-| Consolinno Energy (CV-Zielfirma, TechBase) | ⚠️ Karriereseite blockiert Zugriff; auf Indeed aktuell **keine** Werkstudenten-Ausschreibung; lt. Websuche 5 offene Stellen — manuell prüfen: https://consolinno.de/karriere/ |
+| Direkter Abruf (WebFetch/curl) der 4 Zielseiten | ❌ durch Umgebungs-Netzwerkrichtlinie blockiert (403 für **alle** Hosts) |
+| Wayback Machine / Cache | ❌ archive.org ebenfalls durch die Richtlinie blockiert |
+| Nachbarquellen (digitale-oberpfalz.de, air-regensburg.de — Echo des TechBase-Boards) | ❌ gleiche Blockade |
+| Indeed-API (Aggregator-Echo) | ✅ Vollzugriff — Quelle der 2 empfohlenen Treffer; deckt einen Großteil dessen ab, was meinestadt/mittelbayerische aggregieren |
+| Such-Fragment-Vektor (indexierte Inhalte) | ✅ teilweise — TechBase-Board-Inhalte (trinnovative, siteboard), meinestadt-Kategorien (208 Studentenjobs, 60 Python-Jobs), Consolinno-Stellenzahl |
+| Mittelbayerische Stellenbörse | ❌ doppelt unzugänglich: Umgebungsrichtlinie **und** Seite blockiert den Anthropic-Crawler explizit — Inhalte auch nicht im Suchindex |
+
+**Was unzugänglich bleibt (Zugriffs-, keine Existenzaussage):** Live-Listen von jobs.mittelbayerische.de, das vollständige TechBase-Jobboard und die Consolinno-Stellentitel. Dort können weitere Juni-Treffer existieren.
+
+**Abhilfe:** Die Netzwerk-Richtlinie der Umgebung kann vom Nutzer erweitert werden (Domains freigeben), siehe https://code.claude.com/docs/en/claude-code-on-the-web — danach wäre ein direkter Lauf über die 4 Seiten möglich (außer mittelbayerische, die Anthropic-Zugriffe seitens der Seite sperrt).
 
 ---
 
@@ -100,5 +125,6 @@ Kontakt: Recruiting Gökcen Avci (+49 941 201-2415), Fachbereich Manuel Ringenbe
 
 1. **Sofort:** Bewerbung Bayernwerk (Frist 24.06.2026) — CV-Schwerpunkt auf Energiemanagement + Prozessautomatisierung legen.
 2. **Diese Woche:** Bewerbung Infineon Power GaN — Notenübersicht (< 6 Monate) und Immatrikulationsbescheinigung bereitlegen.
-3. **Manuell prüfen** (Crawler-blockiert): TechBase-Jobboard, Consolinno-Karriereseite, Mittelbayerische Stellenbörse, IfE-Ausschreibung.
+3. **Manuell prüfen** (umgebungs-/seitenblockiert): TechBase-Jobboard, Consolinno-Karriereseite (5 offene Stellen!), Mittelbayerische Stellenbörse, IfE-Ausschreibung, trinnovative-PDF (Datum).
+3a. **Optional:** Netzwerk-Richtlinie der Claude-Code-Umgebung um die Job-Domains erweitern, dann automatisierten Lauf wiederholen.
 4. Optional: Infineon „KI-Anwendungen & Toolentwicklung" (27.05.) ansehen — inhaltlich der stärkste Match, nur 4 Tage außerhalb des Juni-Fensters.
