@@ -8,9 +8,12 @@ monitor.smallFont()
 const INTERVAL_IN_MS = 2500  # 250..5000
 
 # MQTT Broker details
-uri = "mqtts://b649124ec643459999d26166bf458a16.s1.eu.hivemq.cloud:8883"
-username = "oxomania"
-password = "BlaBla12"
+# SECURITY: never commit real credentials. Fill these in locally on the device.
+# The credentials previously committed here (still visible in git history)
+# are compromised and must be rotated in the HiveMQ Cloud console.
+uri = "mqtts://<YOUR_HIVEMQ_HOST>:8883"
+username = "<YOUR_MQTT_USERNAME>"
+password = "<YOUR_MQTT_PASSWORD>"
 
 subscribeTopic_sensor_data = "sensor_data"
 subscribeTopic_data_nox = "data_nox"
