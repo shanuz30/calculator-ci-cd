@@ -1,26 +1,31 @@
-"""
-Test and visualize all four filters on a synthetic point cloud.
+#!/usr/bin/env python3
+"""Test and visualize filters on synthetic data.
+
+Generates a synthetic contaminated cloud, runs all four filters,
+computes 8-dimensional quality metrics, and saves comparison plots.
 
 Usage:
-    python tools/test_and_visualize.py [--output_dir results/]
+    python tools/test_and_visualize.py [--out results/] [--seed 42]
 """
 
 import sys
-from pathlib import Path
-REPO_ROOT = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(REPO_ROOT / "src"))
-
+import argparse
 import logging
-import numpy as np
-import open3d as o3d
+from pathlib import Path
+
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+import numpy as np
+import open3d as o3d
 
-from lidar_snow_filter.filters import LiDARFilters
-from lidar_snow_filter.metrics import ComprehensiveEvaluation
-from lidar_snow_filter.benchmarking import RobustBenchmark
-from lidar_snow_filter.synthetic_data_generator import (
+REPO_ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(REPO_ROOT / "src"))
+
+from lidar_snow_filter.filters import LiDARFilters  # noqa: E402
+from lidar_snow_filter.metrics import ComprehensiveEvaluation  # noqa: E402
+from lidar_snow_filter.benchmarking import RobustBenchmark  # noqa: E402
+from lidar_snow_filter.synthetic_data_generator import (  # noqa: E402
     SyntheticMannequinGenerator,
     SnowContaminationSimulator,
 )
@@ -28,137 +33,161 @@ from lidar_snow_filter.synthetic_data_generator import (
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+FILTER_NAMES = ["SOR", "ROR", "DSOR", "DROR"]
 
-def run_all_filters(
-    input_cloud: o3d.geometry.PointCloud,
-    ground_truth: o3d.geometry.PointCloud,
-    output_dir: Path,
-) -> dict:
-    """Apply all four filters, benchmark, and evaluate against ground truth."""
-    output_dir.mkdir(parents=True, exist_ok=True)
 
-    filter_methods = [
-        ("SOR",  LiDARFilters.sor),
-        ("ROR",  LiDARFilters.ror),
-        ("DSOR", LiDARFilters.dsor),
-        ("DROR", LiDARFilters.dror),
-    ]
-
+def run_filters(input_cloud: o3d.geometry.PointCloud):
+    """Apply all four filters to input_cloud and return results dict."""
+    methods = {
+        "SOR": LiDARFilters.sor,
+        "ROR": LiDARFilters.ror,
+        "DSOR": LiDARFilters.dsor,
+        "DROR": LiDARFilters.dror,
+    }
     results = {}
-    for name, method in filter_methods:
-        logger.info(f"Running {name}...")
-        filtered, meta = method(input_cloud)
-
-        bench = RobustBenchmark(repeats=30, warmup=2)
-        median_s, stats = bench.run(lambda p, m=method: m(p)[0], input_cloud)
-
-        evaluation = ComprehensiveEvaluation.evaluate(
-            filtered, ground_truth, name,
-            original_input_points=len(input_cloud.points)
-        )
-
-        results[name] = {
-            "filtered": filtered,
-            "meta": meta,
-            "timing_us_per_pt": (median_s / len(input_cloud.points)) * 1e6,
-            "evaluation": evaluation,
-        }
-
+    for name, func in methods.items():
+        try:
+            filtered, meta = func(input_cloud)
+            results[name] = {"cloud": filtered, "meta": meta}
+            logger.info(f"{name}: {meta['output_points']} pts, {meta['retention_pct']:.1f}% kept")
+        except Exception as exc:
+            logger.error(f"{name} failed: {exc}")
     return results
 
 
-def plot_results(
-    input_cloud: o3d.geometry.PointCloud,
-    ground_truth: o3d.geometry.PointCloud,
-    results: dict,
-    output_dir: Path,
-) -> None:
-    """Save comparison plots for all filters."""
-    filter_names = list(results.keys())
+def evaluate_filters(filter_results: dict,
+                     ground_truth: o3d.geometry.PointCloud,
+                     input_cloud: o3d.geometry.PointCloud) -> dict:
+    """Run ComprehensiveEvaluation for each filtered cloud."""
+    evals = {}
+    for name, data in filter_results.items():
+        try:
+            ev = ComprehensiveEvaluation.evaluate(
+                data["cloud"],
+                ground_truth,
+                filter_name=name,
+                original_input_points=len(input_cloud.points),
+            )
+            evals[name] = ev
+        except Exception as exc:
+            logger.warning(f"Evaluation failed for {name}: {exc}")
+    return evals
 
-    # ---- 3D scatter comparison ----
-    fig = plt.figure(figsize=(16, 4), facecolor="#0d1117")
-    clouds = [
-        (np.asarray(input_cloud.points), "Contaminated input"),
-        (np.asarray(ground_truth.points), "Ground truth"),
-    ]
-    for name in filter_names:
-        clouds.append((np.asarray(results[name]["filtered"].points), name))
 
-    for i, (pts, title) in enumerate(clouds[:6], 1):
-        ax = fig.add_subplot(1, len(clouds[:6]), i, projection="3d", facecolor="#0d1117")
-        ax.scatter(pts[:, 0], pts[:, 1], pts[:, 2], s=0.5, c=pts[:, 2],
-                   cmap="viridis", alpha=0.8)
-        ax.set_title(title, color="white", fontsize=9, pad=4)
-        ax.set_axis_off()
-        ax.view_init(elev=15, azim=-65)
+def benchmark_filters(input_cloud: o3d.geometry.PointCloud,
+                      repeats: int = 30) -> dict:
+    """Time each filter on input_cloud."""
+    methods = {
+        "SOR": LiDARFilters.sor,
+        "ROR": LiDARFilters.ror,
+        "DSOR": LiDARFilters.dsor,
+        "DROR": LiDARFilters.dror,
+    }
+    bench_results = {}
+    for name, func in methods.items():
+        try:
+            bench = RobustBenchmark(repeats=repeats, warmup=2)
+            median_s, stats = bench.run(lambda p, f=func: f(p)[0], input_cloud)
+            stats["microseconds_per_point"] = (median_s / len(input_cloud.points)) * 1e6
+            bench_results[name] = stats
+        except Exception as exc:
+            logger.warning(f"Benchmark failed for {name}: {exc}")
+    return bench_results
+
+
+def save_summary(filter_results: dict, evals: dict, bench: dict, out_dir: Path):
+    """Print and save a tabular summary of results."""
+    header = f"{'Filter':<8}{'Points':>8}{'Retention':>12}{'AABB IoU':>10}{'Chamfer cm':>12}{'µs/pt':>8}"
+    lines = [header, "-" * len(header)]
+
+    for name in FILTER_NAMES:
+        if name not in filter_results:
+            continue
+        meta = filter_results[name]["meta"]
+        ev = evals.get(name, {})
+        b = bench.get(name, {})
+
+        lines.append(
+            f"{name:<8}"
+            f"{meta['output_points']:>8}"
+            f"{meta['retention_pct']:>11.1f}%"
+            f"{ev.get('aabb_iou', float('nan')):>10.4f}"
+            f"{ev.get('chamfer_distance_cm', float('nan')):>12.2f}"
+            f"{b.get('microseconds_per_point', float('nan')):>8.2f}"
+        )
+
+    summary = "\n".join(lines)
+    print("\n" + summary)
+
+    (out_dir / "summary.txt").write_text(summary + "\n")
+    logger.info(f"Summary saved to {out_dir / 'summary.txt'}")
+
+
+def save_plots(filter_results: dict, evals: dict, bench: dict,
+               clean: o3d.geometry.PointCloud,
+               contaminated: o3d.geometry.PointCloud,
+               out_dir: Path):
+    """Generate and save comparison plots."""
+    names = [n for n in FILTER_NAMES if n in evals]
+    if not names:
+        return
+
+    fig, axes = plt.subplots(1, 2, figsize=(12, 5))
+
+    # AABB IoU comparison
+    ax = axes[0]
+    ax.bar(names, [evals[n].get("aabb_iou", 0) for n in names])
+    ax.set_title("AABB IoU (higher = better)")
+    ax.set_ylim(0, 1.05)
+    ax.set_ylabel("IoU")
+
+    # Chamfer distance comparison
+    ax = axes[1]
+    ax.bar(names, [evals[n].get("chamfer_distance_cm", 0) for n in names], color="orange")
+    ax.set_title("Chamfer Distance cm (lower = better)")
+    ax.set_ylabel("cm")
+
     fig.tight_layout()
-    fig.savefig(output_dir / "comparison_3d.png", dpi=150, bbox_inches="tight",
-                facecolor="#0d1117")
+    plot_path = out_dir / "metrics_comparison.png"
+    fig.savefig(plot_path, dpi=150)
     plt.close(fig)
-
-    # ---- Metrics bar chart ----
-    metrics_keys = ["aabb_iou", "voxel_iou"]
-    x = np.arange(len(filter_names))
-    fig, axes = plt.subplots(1, 2, figsize=(10, 4))
-    for ax, key in zip(axes, metrics_keys):
-        vals = [results[n]["evaluation"][key] for n in filter_names]
-        ax.bar(filter_names, vals)
-        ax.set_title(key)
-        ax.set_ylim(0, 1)
-    fig.tight_layout()
-    fig.savefig(output_dir / "metrics.png", dpi=150, bbox_inches="tight")
-    plt.close(fig)
-
-    # ---- Runtime bar chart ----
-    fig, ax = plt.subplots(figsize=(6, 4))
-    vals = [results[n]["timing_us_per_pt"] for n in filter_names]
-    ax.bar(filter_names, vals)
-    ax.set_ylabel("µs / point")
-    ax.set_title("Runtime per point")
-    fig.tight_layout()
-    fig.savefig(output_dir / "runtime.png", dpi=150, bbox_inches="tight")
-    plt.close(fig)
+    logger.info(f"Plot saved to {plot_path}")
 
 
-def print_summary(results: dict) -> None:
-    """Print a formatted summary table."""
-    print("\n" + "="*80)
-    print(f"{'Filter':<8} {'Points':>8} {'Retention%':>11} "
-          f"{'AABB IoU':>9} {'Voxel IoU':>10} {'µs/pt':>7}")
-    print("-"*80)
-    for name, r in results.items():
-        ev = r["evaluation"]
-        print(f"{name:<8} {ev['output_points']:>8} {ev['retention_pct']:>10.1f}% "
-              f"{ev['aabb_iou']:>9.4f} {ev['voxel_iou']:>10.4f} "
-              f"{r['timing_us_per_pt']:>7.3f}")
-    print("="*80)
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--out", default=str(REPO_ROOT / "results"), help="Output directory")
+    parser.add_argument("--seed", type=int, default=42)
+    parser.add_argument("--snow-density", type=float, default=0.20)
+    parser.add_argument("--repeats", type=int, default=30,
+                        help="Benchmark repetitions per filter")
+    args = parser.parse_args()
 
+    out_dir = Path(args.out)
+    out_dir.mkdir(parents=True, exist_ok=True)
 
-def main(output_dir: str = "results/test_and_visualize") -> None:
-    out = Path(output_dir)
-
-    gen = SyntheticMannequinGenerator(sensor="livox", seed=42)
-    ground_truth = gen.generate_single_scan()
-
-    contaminator = SnowContaminationSimulator(seed=42)
-    input_cloud = contaminator.contaminate(ground_truth, snow_density=0.20)
-
-    logger.info(
-        f"Generated: {len(ground_truth.points)} clean pts, "
-        f"{len(input_cloud.points)} contaminated pts"
+    # Generate synthetic data
+    logger.info("Generating synthetic mannequin scan (Livox model, seed=%d)…", args.seed)
+    gen = SyntheticMannequinGenerator(sensor="livox", seed=args.seed)
+    clean = gen.generate_single_scan()
+    contaminated = SnowContaminationSimulator(seed=args.seed).contaminate(
+        clean, snow_density=args.snow_density
     )
+    logger.info("Clean: %d pts | Contaminated: %d pts", len(clean.points), len(contaminated.points))
 
-    results = run_all_filters(input_cloud, ground_truth, out)
-    plot_results(input_cloud, ground_truth, results, out)
-    print_summary(results)
+    # Filter
+    filter_results = run_filters(contaminated)
 
-    logger.info(f"Outputs saved to {out}/")
+    # Evaluate against clean ground truth, using original contaminated count
+    evals = evaluate_filters(filter_results, clean, contaminated)
+
+    # Benchmark
+    bench = benchmark_filters(contaminated, repeats=args.repeats)
+
+    # Output
+    save_summary(filter_results, evals, bench, out_dir)
+    save_plots(filter_results, evals, bench, clean, contaminated, out_dir)
 
 
 if __name__ == "__main__":
-    import argparse
-    parser = argparse.ArgumentParser(description="Test and visualize all four filters.")
-    parser.add_argument("--output_dir", default="results/test_and_visualize")
-    args = parser.parse_args()
-    main(args.output_dir)
+    main()
