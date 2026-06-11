@@ -1,0 +1,58 @@
+name: Tests
+
+on:
+  push:
+    branches: [main, "claude/**"]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ "${{ matrix.python-version }}" = "3.10" ] && [ -f requirements-lock.txt ]; then
+            pip install -r requirements-lock.txt
+          else
+            pip install -e ".[dev]"
+          fi
+          pip install pytest-cov ruff
+
+      - name: Lint
+        run: ruff check src/ tests/ tools/
+
+      - name: Run tests
+        env:
+          PYTHONPATH: src
+        run: pytest tests/ -q --cov=lidar_snow_filter --cov-report=term
+
+      - name: Reproduce synthetic data
+        env:
+          PYTHONPATH: src
+        run: |
+          python -m lidar_snow_filter.synthetic_data_generator \
+            --num_scans 2 --seed 42 --contaminate
+
+      - name: Demo (headless)
+        env:
+          PYTHONPATH: src
+        run: python tools/demo.py
+
+      - name: Reproducibility check
+        env:
+          PYTHONPATH: src
+        run: python tests/test_reproducibility.py

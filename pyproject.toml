@@ -1,0 +1,64 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pointcloud-snow-filter"
+version = "0.1.0"
+description = "LiDAR snow-filtering research prototype with synthetic reproducibility tests."
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Aravind Parameswaran Menon", email = "ARAVINDPM@users.noreply.github.com"},
+]
+keywords = ["point-clouds", "lidar", "outlier-removal", "snow-filtering", "robotics"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24.3",
+    "pandas>=2.0.3",
+    "scipy>=1.11.2",
+    "open3d>=0.17.0",
+    "matplotlib>=3.7.2",
+    "scikit-learn>=1.5.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=9.0.3",
+]
+viz = [
+    "imageio>=2.31.0",
+    "Pillow>=9.0.0",
+]
+
+[project.scripts]
+snow-filter-node = "lidar_snow_filter.ros2_node:main"
+
+[project.urls]
+Homepage = "https://github.com/ARAVINDPM/pointcloud-snow-filter-ros2-portfolio"
+Repository = "https://github.com/ARAVINDPM/pointcloud-snow-filter-ros2-portfolio.git"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F"]
+
+[tool.ruff.lint.per-file-ignores]
+"tools/*" = ["E402", "E702", "E731"]
