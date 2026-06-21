@@ -10,7 +10,8 @@
     "openregistry@claude-community": true,
     "markgrab@claude-community": true,
     "claude-career-plugin@claude-community": true,
-    "career-brand@claude-community": true
+    "career-brand@claude-community": true,
+    "jobpilot@claude-community": true
   },
   "extraKnownMarketplaces": {
     "claude-community": {
@@ -26,7 +27,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "claude plugin install humwork@claude-community openregistry@claude-community markgrab@claude-community claude-career-plugin@claude-community career-brand@claude-community --scope project >/dev/null 2>&1 || true"
+            "command": "claude plugin install humwork@claude-community openregistry@claude-community markgrab@claude-community claude-career-plugin@claude-community career-brand@claude-community jobpilot@claude-community --scope project >/dev/null 2>&1 || true"
           }
         ]
       }
