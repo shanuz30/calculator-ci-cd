@@ -4,5 +4,20 @@
     "allow": [
       "Bash(git add .claude/*)"
     ]
+  },
+  "enabledPlugins": {
+    "humwork@claude-community": true,
+    "openregistry@claude-community": true,
+    "markgrab@claude-community": true,
+    "claude-career-plugin@claude-community": true,
+    "career-brand@claude-community": true
+  },
+  "extraKnownMarketplaces": {
+    "claude-community": {
+      "source": {
+        "source": "github",
+        "repo": "anthropics/claude-plugins-community"
+      }
+    }
   }
 }
