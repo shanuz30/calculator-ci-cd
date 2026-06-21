@@ -5,6 +5,18 @@
       "Bash(git add .claude/*)"
     ]
   },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "claude plugin install humwork@claude-community openregistry@claude-community markgrab@claude-community claude-career-plugin@claude-community career-brand@claude-community jobpilot@claude-community --scope project >/dev/null 2>&1 || true"
+          }
+        ]
+      }
+    ]
+  },
   "enabledPlugins": {
     "humwork@claude-community": true,
     "openregistry@claude-community": true,
@@ -20,17 +32,5 @@
         "repo": "anthropics/claude-plugins-community"
       }
     }
-  },
-  "hooks": {
-    "SessionStart": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "claude plugin install humwork@claude-community openregistry@claude-community markgrab@claude-community claude-career-plugin@claude-community career-brand@claude-community jobpilot@claude-community --scope project >/dev/null 2>&1 || true"
-          }
-        ]
-      }
-    ]
   }
 }
