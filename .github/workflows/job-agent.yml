@@ -1,0 +1,57 @@
+name: BA Job Agent
+
+on:
+  schedule:
+    # Montags 04:00 UTC = 06:00 MESZ / 05:00 MEZ
+    - cron: "0 4 * * 1"
+  workflow_dispatch:
+    inputs:
+      wo:
+        description: "Ort der Suche"
+        default: "Regensburg"
+      mode:
+        description: "werkstudent | vollzeit | both"
+        default: "both"
+
+permissions:
+  contents: write
+
+jobs:
+  job-agent:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run tests
+        run: python -m pytest tests/ -q
+
+      - name: Run job agent
+        run: |
+          python job_agent.py \
+            --wo "${{ inputs.wo || 'Regensburg' }}" \
+            --mode "${{ inputs.mode || 'both' }}" \
+            --days 30
+
+      - name: Commit report if changed
+        run: |
+          git config user.name "job-agent[bot]"
+          git config user.email "job-agent[bot]@users.noreply.github.com"
+          git add docs/job-search/
+          if git diff --cached --quiet; then
+            echo "Keine Änderungen — nichts zu committen."
+            exit 0
+          fi
+          git commit -m "Job-Agent: wöchentlicher BA-Jobsuche-Report ($(date -u +%F))"
+          # Rebase gegen mögliche parallele Pushes, dann mit Retry pushen
+          for i in 1 2 3 4; do
+            git pull --rebase && git push && exit 0
+            sleep $((2 ** i))
+          done
+          exit 1
