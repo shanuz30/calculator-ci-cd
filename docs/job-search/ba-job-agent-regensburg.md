@@ -1,4 +1,4 @@
-# Job-Agent-Report: Regensburg — 02.07.2026
+# Job-Agent-Report: Regensburg — 03.07.2026
 
 **Quelle:** Offizielle Jobsuche-API der Bundesagentur für Arbeit (rest.arbeitsagentur.de, [bundesAPI/jobsuche-api](https://github.com/bundesAPI/jobsuche-api))
 **Filterkriterien:** Standort Regensburg (+ 50 km), veröffentlicht in den letzten **30 Tagen**, JD-Match **≥ 60 %**
@@ -20,7 +20,7 @@
 
 ## 🎓 Werkstudent — Empfohlene Treffer (Match ≥ 60 %)
 
-_Suchanfragen: Werkstudent, Working Student · 17 Anzeigen gefunden, 1 Volltexte geprüft._
+_Suchanfragen: Werkstudent, Working Student · 16 Anzeigen gefunden, 0 Volltexte geprüft._
 
 _Keine Treffer über der Schwelle in diesem Lauf._
 
@@ -44,15 +44,14 @@ _Keine Treffer über der Schwelle in diesem Lauf._
 | Werkstudent:in als Restaurant-Mitarbeiter:in - TZ | Systemgastronomie Simone Hötzel e.K., 92263 Ebermannsdorf | 10.06.2025 | außerhalb des 30-Tage-Fensters |
 | Werkstudent im Verkauf gesucht! (m/w/d) - 92507 Nabburg | Norma Lebensmittelfilial- betrieb Stiftung & Co. KG, 92507 Nabburg | 13.04.2026 | außerhalb des 30-Tage-Fensters |
 | Werkstudententätigkeit in der Industrialisierung | emz-Hanauer GmbH & Co. KGaA, 92507 Nabburg | 21.05.2026 | außerhalb des 30-Tage-Fensters |
-| Werkstudent im Verkauf (m/w/d) | Media-Saturn Deutschland GmbH, 93053 Regensburg | 26.06.2026 | zu wenig fachliches Signal im Anzeigentext — Match nicht belastbar (wäre ≈ 50 %) |
 
 ---
 
 ## 💼 Vollzeit (Pipeline / nach Studienabschluss) — Empfohlene Treffer (Match ≥ 60 %)
 
-_Suchanfragen: Elektrotechnik Ingenieur, Embedded Software Entwickler, IoT Entwickler, Data Engineer, Testautomatisierung, Energiemanagement · 91 Anzeigen gefunden, 19 Volltexte geprüft._
+_Suchanfragen: Elektrotechnik Ingenieur, Embedded Software Entwickler, IoT Entwickler, Data Engineer, Testautomatisierung, Energiemanagement · 92 Anzeigen gefunden, 20 Volltexte geprüft._
 
-### 1. SGB-SMIT GmbH — Elektroingenieur Prüffeld (m/w/d) — **Match ≈ 92 %** 🆕
+### 1. SGB-SMIT GmbH — Elektroingenieur Prüffeld (m/w/d) — **Match ≈ 92 %**
 
 - **Standort:** 93047 Regensburg
 - **Veröffentlicht:** 22.06.2026 · **Eintritt:** 22.06.2026
@@ -69,7 +68,7 @@ _Suchanfragen: Elektrotechnik Ingenieur, Embedded Software Entwickler, IoT Entwi
 
 ---
 
-### 2. Consultor Unternehmens- beratungsgesellschaft mbH — Informatiker / KI-Entwickler (m/w/d) — **Match ≈ 92 %** 🆕
+### 2. Consultor Unternehmens- beratungsgesellschaft mbH — Informatiker / KI-Entwickler (m/w/d) — **Match ≈ 92 %**
 
 - **Standort:** 93413 Cham, Oberpfalz
 - **Veröffentlicht:** 12.06.2026 · **Eintritt:** 01.07.2026
@@ -86,7 +85,7 @@ _Suchanfragen: Elektrotechnik Ingenieur, Embedded Software Entwickler, IoT Entwi
 
 ---
 
-### 3. Siemens AG — Prüfingenieur (w/m/d) Prüfstandentwicklung und -wartung — **Match ≈ 91 %** 🆕
+### 3. Siemens AG — Prüfingenieur (w/m/d) Prüfstandentwicklung und -wartung — **Match ≈ 91 %**
 
 - **Standort:** 93047 Regensburg
 - **Veröffentlicht:** 10.06.2026 · **Eintritt:** 11.06.2026
@@ -103,7 +102,7 @@ _Suchanfragen: Elektrotechnik Ingenieur, Embedded Software Entwickler, IoT Entwi
 
 ---
 
-### 4. Ostbayerische Technische Hochschule Land Bayern — Wissenschaftliche Mitarbeiterin / Wissenschaftlicher Mitarbeiter (m/w/d) — **Match ≈ 90 %** 🆕
+### 4. Ostbayerische Technische Hochschule Land Bayern — Wissenschaftliche Mitarbeiterin / Wissenschaftlicher Mitarbeiter (m/w/d) — **Match ≈ 90 %**
 
 - **Standort:** 93053 Regensburg
 - **Veröffentlicht:** 19.06.2026 · **Eintritt:** 19.06.2026
@@ -124,7 +123,7 @@ _Suchanfragen: Elektrotechnik Ingenieur, Embedded Software Entwickler, IoT Entwi
 
 ---
 
-### 5. System Logistics GmbH — Junior Software Developer (m/w/d)* — **Match ≈ 89 %** 🆕
+### 5. System Logistics GmbH — Junior Software Developer (m/w/d)* — **Match ≈ 89 %**
 
 - **Standort:** 92442 Wackersdorf
 - **Veröffentlicht:** 15.06.2026 · **Eintritt:** 29.06.2026
@@ -140,7 +139,7 @@ _Suchanfragen: Elektrotechnik Ingenieur, Embedded Software Entwickler, IoT Entwi
 
 ---
 
-### 6. Ostbayerische Technische Hochschule Land Bayern — Wissenschaftliche Mitarbeiter/in (m/w/d) Netzplanung, Energiemanagement- und  Optimierungssysteme — **Match ≈ 86 %** 🆕
+### 6. Ostbayerische Technische Hochschule Land Bayern — Wissenschaftliche Mitarbeiter/in (m/w/d) Netzplanung, Energiemanagement- und  Optimierungssysteme — **Match ≈ 86 %**
 
 - **Standort:** 93053 Regensburg
 - **Veröffentlicht:** 25.06.2026 · **Eintritt:** 25.06.2026
@@ -157,7 +156,7 @@ _Suchanfragen: Elektrotechnik Ingenieur, Embedded Software Entwickler, IoT Entwi
 
 ---
 
-### 7. Creativity Service GmbH — AI / ML Engineer - in Regensburg — **Match ≈ 84 %** 🆕
+### 7. Creativity Service GmbH — AI / ML Engineer - in Regensburg — **Match ≈ 84 %**
 
 - **Standort:** 93049 Regensburg
 - **Veröffentlicht:** 18.06.2026 · **Eintritt:** 18.06.2026
@@ -177,10 +176,10 @@ _Suchanfragen: Elektrotechnik Ingenieur, Embedded Software Entwickler, IoT Entwi
 
 ---
 
-### 8. Kontron Europe GmbH — Mechanic Designer (m/w/d) — **Match ≈ 79 %** 🆕
+### 8. Kontron Europe GmbH — Mechanic Designer (m/w/d) — **Match ≈ 79 %**
 
 - **Standort:** 93426 Roding, Regen
-- **Veröffentlicht:** 29.06.2026 · **Eintritt:** 01.07.2026
+- **Veröffentlicht:** 29.06.2026 · **Eintritt:** 02.07.2026
 - **Link:** https://www.arbeitsagentur.de/jobsuche/jobdetail/10001-1003299857-S
 
 | JD-Anforderung (in der Anzeige erkannt) | CV-Abdeckung | Wertung |
@@ -196,7 +195,23 @@ _Suchanfragen: Elektrotechnik Ingenieur, Embedded Software Entwickler, IoT Entwi
 
 ---
 
-### 9. Reng Industriesysteme GmbH — SPS-Programmierer Elektrotechnik (m/w/d) — **Match ≈ 60 %** 🆕
+### 9. ASMPT AMICRA GmbH — Inbetriebnahme-Ingenieur (m/w/d) — **Match ≈ 67 %** 🆕
+
+- **Standort:** 93055 Regensburg
+- **Veröffentlicht:** 03.07.2026 · **Eintritt:** 03.07.2026
+- **Link:** https://www.arbeitsagentur.de/jobsuche/jobdetail/10001-1003330291-S
+
+| JD-Anforderung (in der Anzeige erkannt) | CV-Abdeckung | Wertung |
+|---|---|---|
+| Studium Elektrotechnik/Mikrosystemtechnik | Exakter Studiengang: M.Eng. Electrical & Microsystems Engineering (OTH Regensburg) | ✅ voll |
+| Englischkenntnisse | Englisch fließend | ✅ voll |
+| Deutschkenntnisse | Deutsch B2 — bei 'verhandlungssicher/sehr gut' mögliche Lücke | ⚠️ teilweise |
+| Halbleiter / Reinraum | Mikrosystemtechnik-Studieninhalte, keine Prozess-/Fab-Praxis | ⚠️ teilweise |
+| CAD / E-CAD | keine CAD-Erfahrung im CV | ❌ fehlt |
+
+---
+
+### 10. Reng Industriesysteme GmbH — SPS-Programmierer Elektrotechnik (m/w/d) — **Match ≈ 60 %**
 
 - **Standort:** 93055 Regensburg
 - **Veröffentlicht:** 15.06.2026 · **Eintritt:** 17.06.2026
@@ -218,6 +233,7 @@ _Suchanfragen: Elektrotechnik Ingenieur, Embedded Software Entwickler, IoT Entwi
 | Projektmanager Elektrotechnik (m/w/d) | Envi Con Engineering GmbH, 93053 Regensburg | 02.03.2026 | außerhalb des 30-Tage-Fensters |
 | Projektleiter Elektrotechnik (m/w/d) | Meyer Ingenieure GmbH, 93055 Regensburg | 30.01.2026 | Senior-/Führungsrolle — passt nicht zum Berufseinstieg nach dem Studium |
 | Ingenieur Elektrotechnik, Elektrotechniker, Meister Elektrotechnik (m/w/d) | Ingenieurbüro Brundobler GmbH, 84130 Dingolfing | 26.02.2026 | außerhalb des 30-Tage-Fensters |
+| Bauleiter Elektrotechnik (m/w/d) – Firmenwagen & 30 Tage Urlaub | INTILION AG, 93049 Regensburg | 02.07.2026 | Senior-/Führungsrolle — passt nicht zum Berufseinstieg nach dem Studium |
 | Ingenieur/in - Elektrotechnik, Technische Gebäudeausrüstung (TGA ELT) | Kaulich & Hofmann GbR, 93138 Lappersdorf, Oberpfalz | 18.09.2025 | außerhalb des 30-Tage-Fensters |
 | Ingenieur Elektrotechnik als Prüfingenieur Funk (w/m/d) | TÜV SÜD AG, 94315 Straubing | 15.05.2026 | außerhalb des 30-Tage-Fensters |
 | Bauleiter Elektrotechnik (m/w/d) | Meyer Ingenieure GmbH, 93055 Regensburg | 30.01.2026 | Senior-/Führungsrolle — passt nicht zum Berufseinstieg nach dem Studium |
@@ -239,9 +255,8 @@ _Suchanfragen: Elektrotechnik Ingenieur, Embedded Software Entwickler, IoT Entwi
 | Ingenieur*in für Elektro-, Mess-, Steuerungs- und Regeltechnik (EMSR) (m/w/d) | ZV Hafen Straubing-Sand (ZVH), 94315 Straubing | 27.03.2026 | außerhalb des 30-Tage-Fensters |
 | Teamleitung / Projektleitung Elektro (m/w/d)* | Kaulich & Hofmann GbR, 93138 Lappersdorf, Oberpfalz | 18.09.2025 | Senior-/Führungsrolle — passt nicht zum Berufseinstieg nach dem Studium |
 | Leiter Automatiserungstechnik (m/w/d) Produktionstechnik | TEMPTON Next Level Experts GmbH, 93055 Regensburg | 25.06.2026 | Senior-/Führungsrolle — passt nicht zum Berufseinstieg nach dem Studium |
-| Elektroingenieur (m/w/d) | Beckhoff Automation GmbH & Co. KG, 93051 Regensburg | 05.05.2026 | außerhalb des 30-Tage-Fensters |
-| Bauleitung für Glasfaserprojekte m/w/d | R-KOM GMBH, 93055 Regensburg | 05.06.2026 | Senior-/Führungsrolle — passt nicht zum Berufseinstieg nach dem Studium |
 | Lichttechniker/in (m/w/d) | Broll Systemtechnik KG, 93083 Obertraubling | 08.04.2025 | außerhalb des 30-Tage-Fensters |
+| Bauleitung für Glasfaserprojekte m/w/d | R-KOM GMBH, 93055 Regensburg | 05.06.2026 | Senior-/Führungsrolle — passt nicht zum Berufseinstieg nach dem Studium |
 | Technischer Sachbearbeiter (m/w/d) - Außendienst für Kabelplanung | Ing. Ludwig Freitag Elektro-GmbH & Co. KG, 93055 Regensburg | 02.07.2025 | außerhalb des 30-Tage-Fensters |
 | Ingenieur Messtechnik (m/w/d) | Mühlbauer Group, 93426 Roding, Regen | 23.02.2026 | außerhalb des 30-Tage-Fensters |
 
