@@ -1,0 +1,107 @@
+# career-ops Profil — Shanu Tomson (Deutschland / Regensburg)
+# Kopieren nach: career-ops/config/profile.yml
+# TODO-Felder lokal ausfüllen; Telefonnummer NICHT in ein öffentliches Repo committen.
+
+candidate:
+  full_name: "Shanu Tomson"
+  email: "shanuz30@gmail.com"
+  phone: "TODO(+49 …)"
+  location: "Regensburg, Bavaria, Germany"
+  linkedin: "TODO(LinkedIn-URL)"
+  portfolio_url: ""
+  github: "https://github.com/shanuz30"
+  twitter: ""
+
+target_roles:
+  primary:
+    - "Werkstudent IoT / Software / Data (Regensburg + 50 km)"
+    - "Werkstudent Elektrotechnik / Testautomatisierung"
+    - "IoT / Embedded Software Engineer (entry level, ab 2027)"
+    - "Data Engineer (entry level, ab 2027)"
+  archetypes:
+    - name: "IoT / Embedded Software Engineer"
+      level: "working student / entry"
+      fit: "primary"
+    - name: "Test Automation / Test Infrastructure Engineer"
+      level: "working student / entry"
+      fit: "primary"
+    - name: "Data Engineer (time series, industrial data)"
+      level: "working student / entry"
+      fit: "primary"
+    - name: "Energy Management / Renewables Engineer"
+      level: "working student / entry"
+      fit: "secondary"
+    - name: "Wissenschaftlicher Mitarbeiter (IoT/Energie, Hochschule)"
+      level: "entry"
+      fit: "secondary"
+    - name: "Semiconductor Technology Engineer"
+      level: "working student / entry"
+      fit: "adjacent"
+
+narrative:
+  headline: "Electrical & Microsystems Engineer (M.Eng. 2027) — IoT test infrastructure, energy data pipelines, Python automation"
+  exit_story: >-
+    Two years as Werkstudent across the full IoT stack in Germany: built BSH's
+    (Bosch Group) test environment for connected home appliances, automated
+    power-analyzer data acquisition on embedded Linux, and shipped smart-city
+    energy analytics at sdp — now looking to deepen that intersection of
+    embedded systems, measurement data, and applied ML.
+  superpowers:
+    - "Python automation end-to-end: embedded BusyBox targets → systemd services → MySQL/InfluxDB → Grafana/Power BI"
+    - "Electrical measurement domain knowledge (power analyzers, V/I/P/PF) that pure-software candidates lack"
+    - "Test infrastructure mindset: reproducible, documented, CI-integrated (Git/Jenkins)"
+    - "Time-series ML: RUL prognosis, AutoML (FLAML), scikit-learn on real sensor data"
+  proof_points:
+    - name: "BSH Werkstudentenzeugnis (top ratings)"
+      url: ""
+      hero_metric: "Analyse-, Fach- und Integrationskompetenz: 'übertrifft die Anforderungen im hohen Maße'"
+    - name: "BA Job Agent (open source)"
+      url: "https://github.com/shanuz30/calculator-ci-cd"
+      hero_metric: "Official Arbeitsagentur API, weighted JD-match scoring, weekly CI runs"
+    - name: "Real-time system-metrics service at BSH"
+      url: ""
+      hero_metric: "SSH-based CPU/RAM/disk capture with robust fallback handling + DB integration, productive via systemd"
+
+compensation:
+  # Werkstudent: üblicher Rahmen Bayern Technik 14–18 €/h
+  target_range: "TODO(z. B. 15-18 €/h Werkstudent; 48000-58000 EUR/Jahr Einstieg ab 2027)"
+  currency: "EUR"
+  minimum: "TODO(Untergrenze)"
+  location_flexibility: "Regensburg + 50 km vor Ort; remote/hybrid deutschlandweit"
+
+location:
+  country: "Germany"
+  city: "Regensburg"
+  timezone: "Europe/Berlin"
+  visa_status: >-
+    TODO(z. B.: Aufenthaltserlaubnis zum Studium — Werkstudententätigkeit bis
+    20 Std./Woche in der Vorlesungszeit erlaubt, kein Sponsoring durch den
+    Arbeitgeber erforderlich. Bitte exakten Status eintragen.)
+
+cv:
+  output_format: "html"
+
+cover_letter:
+  notice_period_days: 14
+  primary_domain: "IoT / test automation / energy data"
+  language_learning:
+    - language: "German"
+      current_level: "B2"
+      target_level: "C1"
+      target_date: "2027-06"
+      sentence: "Ich freue mich darauf, mein Deutsch im Arbeitsalltag weiter auf C1-Niveau zu bringen."
+      countries: ["Germany"]
+
+contact_preferences:
+  preferred_channel: "email"
+
+outreach:
+  greeting_max_chars: 150
+
+application_email:
+  include_contact_block: true
+  include_attachment_checklist: true
+  signature_name: "Shanu Tomson"
+
+# Nur Stellen ab dieser Bewertung bekommen automatisch ein CV-PDF
+auto_pdf_score_threshold: 70
