@@ -6,7 +6,7 @@ import sys
 from datetime import date, timedelta
 from pathlib import Path
 
-from .api import JobsucheClient
+from .api import JobsucheClient, external_application_url
 from .report import render_report
 from .scoring import (is_ausbildung_or_praktikum, is_senior_role, is_werkstudent,
                       load_profile, score_job, title_prescreen)
@@ -147,7 +147,7 @@ def collect_mode(client, profile, mode, args, state):
                 "percent": result["percent"],
                 "active": result["active"],
                 "new": was_new,
-                "externe_url": details.get("externeUrl") or "",
+                "externe_url": external_application_url(details) or offer.get("externe_url", ""),
             })
 
     recommended.sort(key=lambda j: j["percent"], reverse=True)

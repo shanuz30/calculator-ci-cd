@@ -1,0 +1,44 @@
+{
+  "stellenangebotsart": "ARBEIT",
+  "stellenangebotsTitel": "Entwicklungsingenieur Elektrotechnik (m/w/d)",
+  "quereinstiegGeeignet": false,
+  "stellenangebotsBeschreibung": "Du möchtest deine Karriereentwicklung nicht dem Zufall überlassen? Dann gehe mit uns gezielt den nächsten Schritt. Dazu bringen wir bei FERCHAU als eine der führenden europäischen Plattformen für Technologie-Dienstleistungen die smartesten und innovativsten Köpfe mit Unternehmen verschiedenster Branchen zusammen. Wir suchen dich: als ambitionierte:r Kolleg:in, der:die wie wir Technologien auf die nächste Wir realisieren spannende Projekte für namhafte Kunden in allen Technologiebereichen und für alle Branchen und überzeugen täglich mit fundierter Expertise und fachlichem Know-how. Stufe bringe …",
+  "arbeitszeitVollzeit": true,
+  "eintrittszeitraum": {
+    "von": "2026-10-23"
+  },
+  "verguetungsangabe": "JAHRESGEHALT",
+  "artDerVerguetung": "GEHALTSSPANNE",
+  "gehaltsspanneVon": 45000.0,
+  "gehaltsspanneBis": 55000.0,
+  "vertragsdauer": "KEINE_ANGABE",
+  "istGeringfuegigeBeschaeftigung": false,
+  "istBehinderungGefordert": false,
+  "stellenlokationen": [
+    {
+      "adresse": {
+        "plz": "93055",
+        "ort": "Regensburg",
+        "region": "BAYERN",
+        "land": "DEUTSCHLAND"
+      },
+      "breite": 49.013198113,
+      "laenge": 12.145146529
+    }
+  ],
+  "chiffrenummer": "VA40-20120-R",
+  "istPrivateArbeitsvermittlung": false,
+  "istArbeitnehmerUeberlassung": true,
+  "veroeffentlichungszeitraum": {
+    "von": "2026-10-23"
+  },
+  "datumErsteVeroeffentlichung": "2026-10-23",
+  "aenderungsdatum": "2026-10-23T07:43:47.857",
+  "istBetreut": false,
+  "hauptberuf": "Ingenieur/in - Elektrotechnik",
+  "firma": "FERCHAU GmbH Niederlassung Regensburg",
+  "arbeitgeberKundennummerHash": "T-SCyWe2ilS84icF2RbRgyatwkd3SqHS90m6uZhNEuA=",
+  "allianzpartnerUrl": "www.ferchau.de",
+  "allianzpartnerName": "FERCHAU Engineering GmbH",
+  "referenznummer": "12265-518596_JB5280534-S"
+}

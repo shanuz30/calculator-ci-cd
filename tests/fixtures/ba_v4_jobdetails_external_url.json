@@ -1,0 +1,49 @@
+{
+  "stellenangebotsart": "ARBEIT",
+  "stellenangebotsTitel": "Bauleiter:in (m|w|d) Elektrotechnik + Firmenwagen, Home Office, mind. 30 Tage Urlaub",
+  "quereinstiegGeeignet": false,
+  "stellenangebotsBeschreibung": "Stellenangebot: Bauleiter:in (m|w|d) Elektrotechnik + Firmenwagen, Home Office, mind. 30 Tage Urlaub Arbeitgeber: INTILION AG Arbeitsort: 93049 Regensburg Wochenarbeitszeit: 40 Stunden pro Woche Vergütung: 53.955 € bis 69.300 € brutto pro Jahr Das Stellenangebot für \"Bauleiter:in (m|w|d) Elektrotechnik + Firmenwagen, Home Office, mind. 30 Tage Urlaub\" beschreibt eine konkrete berufliche Tätigkeit mit definierten Verantwortlichkeiten und Anforderungen. Gesucht wird eine Person, die die nachfolgenden Aufgaben übernehmen und die erforderlichen Kenntnisse in den jeweiligen Arbeitsbereich einbringe …",
+  "arbeitszeitSchichtNachtWochenende": false,
+  "arbeitszeitTeilzeitAbend": false,
+  "arbeitszeitTeilzeitNachmittag": false,
+  "arbeitszeitTeilzeitVormittag": false,
+  "arbeitszeitTeilzeitFlexibel": false,
+  "arbeitszeitVollzeit": true,
+  "eintrittszeitraum": {
+    "von": "2026-10-26"
+  },
+  "verguetungsangabe": "JAHRESGEHALT",
+  "artDerVerguetung": "GEHALTSSPANNE",
+  "gehaltsspanneVon": 53955.0,
+  "gehaltsspanneBis": 69300.0,
+  "vertragsdauer": "KEINE_ANGABE",
+  "istGeringfuegigeBeschaeftigung": false,
+  "istBehinderungGefordert": false,
+  "stellenlokationen": [
+    {
+      "adresse": {
+        "plz": "93049",
+        "ort": "Regensburg",
+        "region": "BAYERN",
+        "land": "DEUTSCHLAND"
+      },
+      "breite": 49.0173183,
+      "laenge": 12.0607433
+    }
+  ],
+  "homeofficemoeglich": false,
+  "istPrivateArbeitsvermittlung": false,
+  "istArbeitnehmerUeberlassung": false,
+  "veroeffentlichungszeitraum": {
+    "von": "2026-10-26"
+  },
+  "datumErsteVeroeffentlichung": "2026-10-26",
+  "aenderungsdatum": "2026-10-26T07:03:56.049",
+  "externeURL": "https://baugpt.com/jobs/bauleiter-in-mwd-elektrotechnik-firmenwagen-home-office-mind-30-tage-urlaub-gms5uy3z-alt?utm_source=agenturfuerarbeit",
+  "istBetreut": false,
+  "hauptberuf": "Ingenieur/in - Elektrotechnik",
+  "firma": "INTILION AG",
+  "allianzpartnerUrl": "https://baugpt.com/jobs",
+  "allianzpartnerName": "baugpt.com/jobs",
+  "referenznummer": "19192-250903-17898145-S"
+}

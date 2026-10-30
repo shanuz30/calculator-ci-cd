@@ -1,0 +1,41 @@
+{
+  "stellenangebotsart": "ARBEIT",
+  "stellenangebotsTitel": "Ingenieur für elektrische Systemplanung (m/w/d)",
+  "stellenangebotsBeschreibung": "**Arbeiten bei Schneider Electric – We are your Energy Technology Partner**  \n\nSchneider Electric ist der Ort, an dem Deine Arbeit echten Impact schafft. Indem wir die Welt elektrifizieren, automatisieren und digitalisieren, treiben wir die Energiewende aktiv voran. Du wirst Teil inklusiver Teams, die an sinnvollen Herausforderungen arbeiten und Deine Fähigkeiten in Lösungen einbringen, die Industrien, Gemeinschaften und unseren Planeten nachhaltiger machen.  \n\nDu willst echte Wirkung erzielen statt nur Aufgaben abarbeiten? Dann bewirb Dich jetzt.\n\n**Alle wichtigen Informationen für Dich auf e …",
+  "arbeitszeitSchichtNachtWochenende": false,
+  "arbeitszeitTeilzeitAbend": false,
+  "arbeitszeitTeilzeitNachmittag": false,
+  "arbeitszeitTeilzeitVormittag": false,
+  "arbeitszeitTeilzeitFlexibel": false,
+  "arbeitszeitVollzeit": true,
+  "eintrittszeitraum": {
+    "von": "2026-10-07"
+  },
+  "verguetungsangabe": "KEINE_ANGABEN",
+  "vertragsdauer": "UNBEFRISTET",
+  "stellenlokationen": [
+    {
+      "adresse": {
+        "plz": "93055",
+        "ort": "Regensburg",
+        "region": "BAYERN",
+        "land": "DEUTSCHLAND"
+      },
+      "breite": 49.0131981,
+      "laenge": 12.1451465
+    }
+  ],
+  "chiffrenummer": "136273",
+  "veroeffentlichungszeitraum": {
+    "von": "2026-10-05"
+  },
+  "datumErsteVeroeffentlichung": "2026-10-05",
+  "aenderungsdatum": "2026-10-07T13:52:04.841",
+  "istBetreut": true,
+  "hauptberuf": "Ingenieur/in - Elektrotechnik",
+  "firma": "Schneider Electric GmbH",
+  "arbeitgeberKundennummerHash": "RHJfY7e9RMOqkHoqYz20XLJoMhEk_Qz5wzgnW3pEAzo=",
+  "allianzpartnerUrl": "http://www.arbeitsagentur.de",
+  "allianzpartnerName": "arbeitsagentur.de",
+  "referenznummer": "10001-1003798655-S"
+}

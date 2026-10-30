@@ -1,0 +1,163 @@
+{
+  "ergebnisliste": [
+    {
+      "stellenangebotsart": "ARBEIT",
+      "stellenangebotsTitel": "Ingenieur, Techniker - SPS-Programmierer (m/w/d)",
+      "quereinstiegGeeignet": false,
+      "arbeitszeitSchichtNachtWochenende": false,
+      "arbeitszeitTeilzeitAbend": false,
+      "arbeitszeitTeilzeitNachmittag": false,
+      "arbeitszeitTeilzeitVormittag": false,
+      "arbeitszeitTeilzeitFlexibel": false,
+      "arbeitszeitVollzeit": true,
+      "eintrittszeitraum": {
+        "von": "2026-10-28"
+      },
+      "verguetungsangabe": "JAHRESGEHALT",
+      "artDerVerguetung": "FESTGEHALT",
+      "festgehalt": 56359.43,
+      "vertragsdauer": "KEINE_ANGABE",
+      "istGeringfuegigeBeschaeftigung": false,
+      "stellenlokationen": [
+        {
+          "adresse": {
+            "plz": "93047",
+            "ort": "Regensburg",
+            "region": "BAYERN",
+            "land": "DEUTSCHLAND"
+          },
+          "breite": 49.0169021,
+          "laenge": 12.0963197
+        }
+      ],
+      "homeofficemoeglich": true,
+      "homeofficetyp": "NACH_VEREINBARUNG",
+      "veroeffentlichungszeitraum": {
+        "von": "2026-10-27"
+      },
+      "datumErsteVeroeffentlichung": "2026-10-27",
+      "aenderungsdatum": "2026-10-28T07:42:42.116",
+      "externeURL": "https://www.jobvector.de/job/ingenieur-94f87ca4d9b5fe73/?utm_source=arbeitsagentur&utm_medium=partner&utm_campaign=tmcfdae_job_jid275317&utm_content=b2c&utm_term=tmf8eca_uic332e8b5",
+      "hauptberuf": "Ingenieur/in - Elektrotechnik",
+      "alternativBeruf1": "Projektierungstechniker/in (Elektro)",
+      "alternativBeruf2": "Ingenieur/in - Energietechnik",
+      "firma": "Ingenieurbüro Guttenberger",
+      "referenznummer": "14225-94f87ca4d9b5fe73-S",
+      "entfernung": 1,
+      "alleBerufe": [
+        "Ingenieur/in - Elektrotechnik",
+        "Ingenieur/in - Energietechnik",
+        "Projektierungstechniker/in (Elektro)"
+      ]
+    },
+    {
+      "stellenangebotsart": "ARBEIT",
+      "stellenangebotsTitel": "Testingenieur (m/w/d)",
+      "quereinstiegGeeignet": false,
+      "arbeitszeitSchichtNachtWochenende": false,
+      "arbeitszeitTeilzeitAbend": false,
+      "arbeitszeitTeilzeitNachmittag": false,
+      "arbeitszeitTeilzeitVormittag": false,
+      "arbeitszeitTeilzeitFlexibel": false,
+      "arbeitszeitVollzeit": false,
+      "eintrittszeitraum": {
+        "von": "2026-10-04"
+      },
+      "verguetungsangabe": "KEINE_ANGABEN",
+      "vertragsdauer": "KEINE_ANGABE",
+      "istGeringfuegigeBeschaeftigung": false,
+      "stellenlokationen": [
+        {
+          "adresse": {
+            "plz": "24103",
+            "ort": "Kiel",
+            "region": "SCHLESWIG_HOLSTEIN",
+            "land": "DEUTSCHLAND"
+          },
+          "breite": 54.3230917,
+          "laenge": 10.1317967
+        },
+        {
+          "adresse": {
+            "plz": "89073",
+            "ort": "Ulm, Donau",
+            "region": "BADEN_WUERTTEMBERG",
+            "land": "DEUTSCHLAND"
+          },
+          "breite": 48.404878,
+          "laenge": 9.9994147
+        },
+        {
+          "adresse": {
+            "plz": "80331",
+            "ort": "München",
+            "region": "BAYERN",
+            "land": "DEUTSCHLAND"
+          },
+          "breite": 48.1355827,
+          "laenge": 11.5739758
+        }
+      ],
+      "homeofficemoeglich": true,
+      "homeofficetyp": "NACH_VEREINBARUNG",
+      "chiffrenummer": "250885",
+      "veroeffentlichungszeitraum": {
+        "von": "2026-10-04"
+      },
+      "datumErsteVeroeffentlichung": "2026-10-04",
+      "aenderungsdatum": "2026-10-04T07:13:59.562",
+      "externeURL": "https://www.get-in-engineering.de/jobsuche/p250885?utm_source=arbeitsagentur&utm_medium=organic&utm_campaign=launch-basic",
+      "hauptberuf": "Ingenieur/in - Informations-, Kommunikationstechnik",
+      "firma": "Konzept Informationssysteme",
+      "referenznummer": "13645-250885-S",
+      "alleBerufe": [
+        "Ingenieur/in - Informations-, Kommunikationstechnik"
+      ]
+    },
+    {
+      "stellenangebotsart": "PRAKTIKUM_TRAINEE",
+      "stellenangebotsTitel": "Werkstudent*in (d/w/m) Fabrikplanung",
+      "arbeitszeitSchichtNachtWochenende": false,
+      "arbeitszeitTeilzeitAbend": false,
+      "arbeitszeitTeilzeitNachmittag": false,
+      "arbeitszeitTeilzeitVormittag": true,
+      "arbeitszeitTeilzeitFlexibel": false,
+      "arbeitszeitVollzeit": false,
+      "eintrittszeitraum": {
+        "von": "2025-05-08"
+      },
+      "verguetungsangabe": "KEINE_ANGABEN",
+      "vertragsdauer": "KEINE_ANGABE",
+      "stellenlokationen": [
+        {
+          "adresse": {
+            "ort": "Regensburg",
+            "region": "BAYERN",
+            "land": "DEUTSCHLAND"
+          },
+          "breite": 49.0178109,
+          "laenge": 12.1116983
+        }
+      ],
+      "veroeffentlichungszeitraum": {
+        "von": "2025-05-05"
+      },
+      "datumErsteVeroeffentlichung": "2025-05-05",
+      "aenderungsdatum": "2025-07-19T21:15:50.000",
+      "hauptberuf": "Ingenieur/in - Elektrotechnik",
+      "firma": "Industry Consulting Strobl GmbH & Co.KG",
+      "arbeitgeberKundennummerHash": "QOWgJ_snyBnHOKotmjH2vb6mSvxWjOaNhJoU_TFDOnc=",
+      "referenznummer": "10001-1001395800-S",
+      "entfernung": 1,
+      "alleBerufe": [
+        "Ingenieur/in - Elektrotechnik"
+      ]
+    }
+  ],
+  "maxErgebnisse": 3,
+  "page": 1,
+  "size": 25,
+  "woOutput": {
+    "suchmodus": "UMKREIS"
+  }
+}
